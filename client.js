@@ -21,7 +21,7 @@ $(function(){
 });
 
 $(document).keyup(function(e) {
-    // detect Esc key press and autoclick close button
+    // detect Esc key press and autoclick toast close button
     if (e.key === "Escape") {
         e.preventDefault();
         document.getElementById("toast-close").click();

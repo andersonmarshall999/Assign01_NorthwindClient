@@ -9,11 +9,46 @@
     <!-- pickadate -->
     <link rel="stylesheet" href="default.css" />
     <link rel="stylesheet" href="default.date.css" />
+    <!-- google font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Londrina+Shadow&family=Questrial&display=swap');
+    </style>
+    <!-- animate css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- custom css -->
+    <style>
+        h1 {
+            font-family: 'Londrina Shadow';
+            color: slategray;
+            font-size: 3.5em;
+        }
+        h1.animate__animated {
+            display: inline-block;
+        }
+        body {
+            font-family: 'Questrial';
+        }
+        .ball {
+            visibility: hidden;
+        }
+    </style>
 </head>
 <body>
+    <!-- toast -->
+    <div class="position-fixed bottom-0 right-0 p-3" style="z-index: 5; right: 0; bottom: 0;">
+        <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
+            <div class="toast-header">
+              <strong class="mr-auto">Hey!</strong>
+              <button id="toast-close" type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          <div class="toast-body">No balloons selected!</div>
+        </div>
+    </div>
     <!-- content -->
     <div class="container-lg">
-        <h1>Happy Birthday!</h1><hr />
+        <h1 id="title" class="title animate__animated">Happy Birthday!</h1><hr />
     </div>
     <form role="form" class="container-lg">
         <div class="row">
@@ -26,6 +61,26 @@
                     <label for="birthday">Birthday</label>
                     <input type="text" class="form-control" id="birthday" placeholder="Enter birthday" />
                 </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Select your favorite balloons</h5>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="blue">
+                            <label class="form-check-label" for="blue">Blue balloons</label>
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="green">
+                            <label class="form-check-label" for="green">Green balloons</label>
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="red">
+                            <label class="form-check-label" for="red">Red balloons</label>
+                        </div>
+                        <button type="button" class="check-all btn btn-outline-primary mt-3" id="check-all">Select all</button>
+                        <button type="button" class="uncheck-all btn btn-outline-primary mt-3" id="uncheck-all">Deselect all</button>
+                    </div>
+                </div>
+                <button type="button" class="submit btn btn-outline-primary mt-3" id="submit">Submit</button>
             </div>
             <div class="col-sm">
                 <!-- <img src="media/black.png" class="ball" alt="black balloon" id="blackImg" /> -->
